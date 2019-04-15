@@ -1,5 +1,5 @@
 #/usr/bin/env ruby
 
-require ' ./lib/drinks'
+require ' ./lib/drinks.rb'
 
 Drinks::CLI.new.call
