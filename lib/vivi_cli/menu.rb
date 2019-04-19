@@ -1,20 +1,26 @@
 require 'nokogiri'
 requite 'open-uri'
 
-
-module VIVI
   class Menu
-   attr_accessor :Vivi_Special, :Flavored_Tea, :Milk_Tea, :Fresh_Fruit, :Slush, :Float_Yakult, :Fresh_Milk
+   attr_accessor :name, :image
    
-   def self.list_names
-     self.scrape_list
+   @@all = []
+   
+   def initialize(drink_hash)
+     drink_hash.each do |attribute,data|
+      self.send(("#{attribute}="), data)
+     @@all << self
    end
    
-   def self.scrape_list
-     menu_list = []
-     doc = Nokogiri::HTML(open(http://www.vivibubbletea.com/index.php))
-     menu = doc.search('div.hone_menu03')
-   end
    
+ def self.create_drink_list(drink_array)
+    drink_array.each do |drink|
+      Menu.new(drink)
+    end
+ end
+ 
+  def self.all
+    @@all
+  end
    
 end
