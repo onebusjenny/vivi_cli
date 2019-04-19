@@ -22,14 +22,24 @@ class Drinks::CLI
     case input
     when "1"
      menu1= Scraper.scrape_name("http://www.vivibubbletea.com/products.php?cat=6")
+     list1 = Menu.create_drink_list(menu1)
+      print_list(list1)
     when "2"
       menu2= Scraper.scrape_name("http://www.vivibubbletea.com/products.php?cat=2")
+      list2 = Menu.create_drink_list(menu2)
+      print_list(list2)
     when "3"
       menu3= Scraper.scrape_name("http://www.vivibubbletea.com/products.php?cat=1")
+      list3 = Menu.create_drink_list(menu3)
+      print_list(list3)
     when "4"
       menu4= Scraper.scrape_name("http://www.vivibubbletea.com/products.php?cat=5")
+      list4 = Menu.create_drink_list(menu4)
+      print_list(list4)
     when "5"
       menu5= Scraper.scrape_name("http://www.vivibubbletea.com/products.php?cat=3")
+      list5 = Menu.create_drink_list(menu5)
+      print_list(list5)
     when"6"
      menu6= Scraper.scrape_name("http://www.vivibubbletea.com/products.php?cat=4") 
      list6 = Menu.create_drink_list(menu6)
@@ -39,7 +49,7 @@ class Drinks::CLI
       list7 = Menu.create_drink_list(menu7)
       print_list(list7)
     else
-      puts "Not sure what you want, try it, type list or exit"
+      puts "Not sure what you want, try it, type menu or exit"
   end
 end
 

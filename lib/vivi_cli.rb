@@ -2,5 +2,7 @@ require 'open-uri' 
 require 'nokogiri' 
 require 'pry' 
 
-require "vivi_cli/version"
-require_relative './drinks/cli'
+require_relative "./vivi_cli/version" 
+require_relative "./vivi_cli/drinks" 
+require_relative "./vivi_cli/menu" 
+require_relative "./vivi_cli/scraper"
