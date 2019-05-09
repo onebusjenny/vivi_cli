@@ -1,6 +1,3 @@
-require 'nokogiri'
-requite 'open-uri'
-
   class Menu
    attr_accessor :name, :image
    
@@ -11,6 +8,7 @@ requite 'open-uri'
       self.send(("#{attribute}="), data)
      @@all << self
    end
+end
    
    
  def self.create_drink_list(drink_array)

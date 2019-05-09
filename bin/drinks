@@ -1,5 +1,6 @@
-#/usr/bin/env ruby
+#!/usr/bin/env ruby
 
-require "bundler/setup" 
-require_relative "/lib/vivi_cli" 
-Drinks::CLI.new.call
+
+
+require "vivi_cli"
+ViviCli::CLI.new.call

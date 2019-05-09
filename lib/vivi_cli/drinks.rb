@@ -1,5 +1,4 @@
-require 'pry'
-class Drinks::CLI
+class ViviCli::CLI
   
   def call 
     puts "What would you like to drink today?"
@@ -50,6 +49,7 @@ class Drinks::CLI
       print_list(list7)
     else
       puts "Not sure what you want, try it, type menu or exit"
+    end
   end
 end
 
@@ -57,11 +57,11 @@ def print_list(list)
   list.each_with_index do |drink,index|
     puts "#{index+1}. #{drink.name}"
     puts "#{drink.image}"
-  
+  end
 end
 
 def thankyou
   puts "thank you for your order!"
 end
 
-end
+  end
