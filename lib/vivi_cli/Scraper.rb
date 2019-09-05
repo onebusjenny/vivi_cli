@@ -3,14 +3,16 @@ class Scraper
   
   
   def self.scrape_name(url)
-    drinks = []
-    menu = Nokogiri::HTML(open(url))
+    works = []
+    portfolio = Nokogiri::HTML(open(url))
     
-    menu.css("div.circle_box").each do |drink|
-      drink_hash = {:name =>drink.css(".p2").text}
+    portfolio.css(".project title").each do |work|
+      work_hash = {:name =>work.css(".h2").text}
       
-      drinks << drink_hash
+      works << work_hash
     end
-    drinks
+    works
   end
 end
+
+
