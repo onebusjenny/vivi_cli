@@ -1,24 +1,24 @@
-  class Menu
-   attr_accessor :name, :image
-   
-   @@all = []
-   
-   def initialize(drink_hash)
-     drink_hash.each do |attribute,data|
-      self.send(("#{attribute}="), data)
-     @@all << self
+class Menu
+  attr_accessor :name
+  
+  @@all = []
+  
+  def initialize(project_hash)
+    work_hash.each do |data|
+     self.send(("#{data}="))
+    @@all << self
+  end
+end
+  
+  
+def self.create_work_list(project_array)
+   work_array.each do |work|
+     Menu.new(work)
    end
 end
-   
-   
- def self.create_drink_list(drink_array)
-    drink_array.each do |drink|
-      Menu.new(drink)
-    end
+
+ def self.all
+   @@all
  end
- 
-  def self.all
-    @@all
-  end
-   
+  
 end
