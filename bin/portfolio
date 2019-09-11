@@ -2,5 +2,5 @@
 
 
 
-require "vivi_cli"
+require_relative "../lib/vivi_cli"
 ViviCli::CLI.new.call
