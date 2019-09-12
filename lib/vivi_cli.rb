@@ -1,6 +1,6 @@
-# require 'open-uri'
-# require 'nokogiri'
-# require 'pry'
+require 'open-uri'
+require 'nokogiri'
+require 'pry'
 
 require_relative "./vivi_cli/version"
 require_relative "./vivi_cli/portfolio"

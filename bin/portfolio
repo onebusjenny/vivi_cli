@@ -3,4 +3,4 @@
 
 
 require_relative "../lib/vivi_cli"
-ViviCli::CLI.new.call
+CLI.new.call
