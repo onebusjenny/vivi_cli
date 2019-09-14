@@ -41,49 +41,38 @@ class CLI
     case input
     when "1"
      portfolio1= Scraper.scrape_profile_page("https://www.jennychudesign.com/#/865004006353/")
-     list1 = Portfolio.create_project_list(portfolio1)
-      print_list(list1)
-      binding.pry
+      puts "#{portfolio1[:description]}"
+  
     when "2"
       portfolio2= Scraper.scrape_profile_page("https://www.jennychudesign.com/#/blackout-2003/")
-      list2 = Portfolio.create_project_list(portfolio2)
-      print_list(list2)
+      puts "#{portfolio2[:description]}"
     when "3"
       portfolio3= Scraper.scrape_profile_page("https://www.jennychudesign.com/#/new-gallery-2/")
-      list3 = Portfolio.create_project_list(portfolio3)
-      print_list(list3)
+      puts "#{portfolio3[:description]}"
     when "4"
       portfolio4= Scraper.scrape_profile_page("https://www.jennychudesign.com/#/new-gallery/")
-      list4 = Portfolio.create_project_list(portfolio4)
-      print_list(list4)
+      puts "#{portfolio4[:description]}"
     when "5"
       portfolio5= Scraper.scrape_profile_page("https://www.jennychudesign.com/#/honey-bee/")
-      list5 = Portfolio.create_project_list(portfolio5)
-      print_list(list5)
+      puts "#{portfolio5[:description]}"
     when"6"
       portfolio6= Scraper.scrape_profile_page("https://www.jennychudesign.com/#/jury-service-form-redesign/") 
-     list6 = Portfolio.create_project_list(portfolio6)
-      print_list(list6)
+      puts "#{portfolio6[:description]}"
     when "7"
       portfolio7= Scraper.scrape_profile_page("https://www.jennychudesign.com/#/a-dream/")
-      list7 = Portfolio.create_project_list(portfolio7)
-      print_list(list7)
+      puts "#{portfolio7[:description]}"
     when "8"
       portfolio8= Scraper.scrape_profile_page("https://www.jennychudesign.com/#/alexs-lemonade-stand-logo-design/")
-      list8 = Portfolio.create_project_list(portfolio8)
-      print_list(list8)
+      puts "#{portfolio8[:description]}"
     when "9"
       portfolio9= Scraper.scrape_profile_page("https://www.jennychudesign.com/#/architecture-lecture-series/")
-      list9 = Portfolio.create_project_list(portfolio9)
-      print_list(list9)
+      puts "#{portfolio9[:description]}"
     when"10"
       portfolio10= Scraper.scrape_profile_page("https://www.jennychudesign.com/#/iii/") 
-     list10 = Portfolio.create_project_list(portfolio10)
-      print_list(list10)
+      puts "#{portfolio10[:description]}"
     when "11"
       portfolio11= Scraper.scrape_profile_page("https://www.jennychudesign.com/#/logo-re-design-timeless-toys/")
-      list11 = Portfolio.create_project_list(portfolio11)
-      print_list(list11)
+      puts "#{portfolio11[:description]}"
 
     else
       puts "you bored? type exit to leave"
@@ -91,11 +80,11 @@ class CLI
   end
 end
 
-def print_list(list)
-  list.each_with_index do |work,index|
-    puts "#{index+1}. #{work.name}"
-  end
-end
+# def print_list(list)
+#   list.each_with_index do |work,index|
+#     puts "#{index+1}. #{work.name}"
+#   end
+# end
 
 def thankyou
   puts "Isn't everything so cool? shoot me an email if you want to give me a job. Byebye."
