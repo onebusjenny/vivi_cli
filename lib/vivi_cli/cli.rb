@@ -4,78 +4,39 @@ class CLI
   def call 
     puts "Welcom to Jenny's portfolio!"
     Scraper.scrape_portfolio_page
-    projects
-    
+    display_projects
+    menu
   end
   
-  def projects
+  def display_projects
   puts "Which project would you like to see today?"
   
- 
-  Portfolio.all.each.with_index(1) do |object,index|
-    # binding.pry
-  puts "#{index}. #{object.title}" 
+ #.each = iterator. I'm accessing all the objects from the @@all array
+ #portolio.all gives me access to @@all array in Portfolio class
+  Portfolio.all.each.with_index(1) do |object,index| #setting variables in the iterator, object represents the element in the array
+  puts "#{index}. #{object.title}" #.title is a method, created by attr_accessor. From the instance variable: to that object (scope)
   end
+end
 
-  
-  
-  # puts "1. Logo Design – Los Angeles County Museum of Art"
-  # puts "2. Blackout 2003"
-  # puts "3. Art Design Chicago"
-  # puts "4. Platonic Solid"
-  # puts "5. Honey Bee"
-  # puts "6. Jury Service Form Redesign "
-  # puts "7. A Dream"
-  # puts "8. Alex's Lemonade Stand Logo Design"
-  # puts "9. Architecture Lecture Series"
-  # puts "10. Bubble Tea Book – How to make a bubble tea"
-  # puts "11. Logo Re–Design/ Timeless Toys"
+  def menu
 
-
-   input = nil
+   input = nil #define the variable so it can compare with
  
-   while input != "exit"
+   while input != "exit" #while input is not equal to exit
     
    puts "Enter the work number you want to see or type exit to leave:"
-    input = gets.strip.downcase
-    case input
-    when "1"
+    input = gets.strip
+
+    if input == "1"
      portfolio1= Scraper.scrape_profile_page("https://www.jennychudesign.com/#/865004006353/")
       puts "#{portfolio1[:description]}"
-  
-    when "2"
-      portfolio2= Scraper.scrape_profile_page("https://www.jennychudesign.com/#/blackout-2003/")
-      puts "#{portfolio2[:description]}"
-    when "3"
-      portfolio3= Scraper.scrape_profile_page("https://www.jennychudesign.com/#/new-gallery-2/")
-      puts "#{portfolio3[:description]}"
-    when "4"
-      portfolio4= Scraper.scrape_profile_page("https://www.jennychudesign.com/#/new-gallery/")
-      puts "#{portfolio4[:description]}"
-    when "5"
-      portfolio5= Scraper.scrape_profile_page("https://www.jennychudesign.com/#/honey-bee/")
-      puts "#{portfolio5[:description]}"
-    when"6"
-      portfolio6= Scraper.scrape_profile_page("https://www.jennychudesign.com/#/jury-service-form-redesign/") 
-      puts "#{portfolio6[:description]}"
-    when "7"
-      portfolio7= Scraper.scrape_profile_page("https://www.jennychudesign.com/#/a-dream/")
-      puts "#{portfolio7[:description]}"
-    when "8"
-      portfolio8= Scraper.scrape_profile_page("https://www.jennychudesign.com/#/alexs-lemonade-stand-logo-design/")
-      puts "#{portfolio8[:description]}"
-    when "9"
-      portfolio9= Scraper.scrape_profile_page("https://www.jennychudesign.com/#/architecture-lecture-series/")
-      puts "#{portfolio9[:description]}"
-    when"10"
-      portfolio10= Scraper.scrape_profile_page("https://www.jennychudesign.com/#/iii/") 
-      puts "#{portfolio10[:description]}"
-    when "11"
-      portfolio11= Scraper.scrape_profile_page("https://www.jennychudesign.com/#/logo-re-design-timeless-toys/")
-      puts "#{portfolio11[:description]}"
-
+    elsif input.downcase == "exit"
+      puts "goodbye"
+    elsif input.downcase == "list"
+      display_projects
     else
-      puts "you bored? type exit to leave"
+      puts "you bored? Sorry I don't understand what you mean. Type exit to leave or list to see it again"
+      
     end
   end
 end
