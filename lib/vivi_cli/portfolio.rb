@@ -13,11 +13,6 @@ class Portfolio
   end
   
   
-  def self.create_project_list(project_array)
-    project_array.each do |project| 
-      Portfolio.new(project)
-    end
-  end
 
   def self.all 
    @@all

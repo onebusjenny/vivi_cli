@@ -2,8 +2,6 @@ class Scraper
 
   def self.scrape_portfolio_page 
     portfolio = Nokogiri::HTML(open("https://www.jennychudesign.com/")) 
-   
-    projects = [] 
     
     portfolio.css("div.project-item")[0..11].each do |work| 
       project= { 

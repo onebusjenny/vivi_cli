@@ -10,7 +10,7 @@ class CLI
   
   def display_projects
     puts "Which project would you like to see today?"
-    Portfolio.all.each.with_index(1) do |object,index| 
+    Portfolio.all.collect.with_index(1) do |object,index| 
     puts "#{index}. #{object.title}" 
       end
   end
@@ -30,8 +30,11 @@ class CLI
       index_number = input.to_i - 1
 
       project_object = Portfolio.all[index_number]  
-      Scraper.scrape_profile_page (project_object) 
-      
+
+      if project_object.description == nil
+        
+         Scraper.scrape_profile_page (project_object) 
+      end
       puts project_object.title
       puts project_object.description 
 
